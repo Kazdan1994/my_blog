@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyBlog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-primary">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to articles_path, :class => 'navbar-brand' do %>
+          <span class="glyphicon glyphicon-home"></span>
+    <% end %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+            <li class="dropdown">
+            <%= link_to "#", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"},  :role => "button", :'aria-haspopup' => 'true', :'aria-expanded' => 'false' do %>
+                  <p class="navbar-text">
+                    <span class="glyphicon glyphicon-user">
+                    </span>
+                    Connecté(e)
+                    <span class="caret"></span>
+                  </p>
+            <% end %>
+              <ul class="dropdown-menu">
+                <li role="separator" class="divider"></li>
+                <li><%= current_user.email%></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Mon compte", edit_user_registration_path %></a></li>
+                <li><%= link_to "déconnexion", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "Se connecter", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "Créer un compte", new_user_registration_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container">
+
+  <%= yield %>
+
+</div>
+
+</body>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</html>

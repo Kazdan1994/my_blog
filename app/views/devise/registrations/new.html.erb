@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h2>Créer un compte</h2>
+</div>
+
+<div class="well">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-group">
+      <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :password, required: true, input_html: { class: 'form-control' }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    </div>
+    <div class="form-group">
+        <%= f.input :password_confirmation, required: true, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="spacer form-actions">
+      <%= f.button :submit, "Créer le compte", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<p>
+    (*) : Tous les champs marqués d'une étoile sont requis
+</p>

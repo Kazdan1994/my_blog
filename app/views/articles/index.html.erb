@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= search_form_for @search, :name => "search" do |f| %>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-search"></span>
+        </div>
+        <%= f.text_field :titre_start, :class => "form-control", placeholder: 'Rechercher...' %>
+        <div class="input-group-btn">
+          <%= f.submit "Rechercher", :class => 'btn btn-primary' %>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Articles <span class="badge"><%= @nombreArticles %></span></th>
+      <th>Date de création</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @articles.each do |article| %>
+        <tr>
+          <td>
+            <%= link_to article.titre, article_path(article), :class => 'titre' %>
+          </td>
+          <td>
+            <%= article.date_creation %>
+          </td>
+        </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails, :previous_label => 'Précédent', :next_label => 'Suivant' %>
+</div>

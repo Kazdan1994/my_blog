@@ -1,0 +1,27 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.titre {
+  font-size: 20px;
+  display: block;
+  height: 100%;
+}
+
+.titre:hover {
+  text-decoration:none;
+}
+
+.spacer {
+  margin: 25px;
+}
+
+.spacerHs {
+  margin-top: 50%;
+}
+
+/*
+.dropdown-menu {
+  width: 100%;
+}
+*/
