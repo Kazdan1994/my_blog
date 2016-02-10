@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Bootstrap
 gem 'bootstrap-sass'
 
+# Markdown
+gem 'redcarpet'
+
 # Authentification
 # https://github.com/plataformatec/devise
 gem 'devise'

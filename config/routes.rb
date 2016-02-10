@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :articles
+  resources :articles, only: [:index, :show]
 
   root to: 'articles#index'
   get '/articles/:id' => 'articles#show'
+  get '/articles/:id/new' => 'articles#new'
+  post '/articles/:id/edit' => 'articles#create'
+  patch '/articles/:id/update' => 'articles#update'
 
 
 

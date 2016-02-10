@@ -1,0 +1,39 @@
+<div class="pull-left">
+  <ul class="nav nav-pills">
+    <li>
+      <%= link_to "Revenir à la liste des articles", articles_path %>
+    </li>
+    <li>
+      <%= link_to "Créer un nouvel article", new_article_path %>
+    </li>
+  </ul>
+</div>
+
+<div class="pull-right">
+  <ul class="nav nav-pills">
+    <li class="active">
+      <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+    </li>
+  </ul>
+</div>
+
+<%= simple_form_for @article do |f| %>
+
+    <%= f.error_notification %>
+
+<div class="page-header">
+  <div class="form-group">
+    <%= f.input :titre, required: true, input_html: { class: 'form-control' } %>
+  </div>
+</div>
+
+<div class="well">
+  <div class="form-group">
+    <%= f.input :contenu, required: true, as: :text, input_html: { class: 'form-control' } %>
+  </div>
+</div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Modifier l'article", :class => "btn btn-primary" %>
+    </div>
+<% end %>

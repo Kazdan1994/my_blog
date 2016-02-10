@@ -2,6 +2,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  padding-top: 70px;
+}
+
 .titre {
   font-size: 20px;
   display: block;
@@ -20,8 +24,7 @@
   margin-top: 50%;
 }
 
-/*
+
 .dropdown-menu {
   width: 100%;
 }
-*/

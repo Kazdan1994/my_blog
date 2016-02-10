@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+=begin
 article2	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	3	, true, 	4	))
 article3	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	4	, true, 	5	))
 article4	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	5	, true, 	6	))
@@ -25,3 +26,8 @@ article17	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sent
 article18	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	19	, true, 	20	))
 article19	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	20	, true, 	21	))
 article20	 = Article.create(titre: Faker::Book.title, contenu: Faker::Lorem.sentence(	21	, true, 	22	))
+=end
+
+User1 = User.create(email: 'arthur-jacquemin@mail.com',
+                    password: 'arthur',
+                    role: 'admin')
